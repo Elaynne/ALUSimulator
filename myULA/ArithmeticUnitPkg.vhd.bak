@@ -1,0 +1,45 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+package ArithmeticUnit is
+
+	function Sum(a, b : std_logic_vector) return std_logic_vector;
+	function Sub(a, b : std_logic_vector) return std_logic_vector;
+	function Mul(a, b : std_logic_vector) return std_logic_vector;
+	function ShiftLeft(a, qt : std_logic_vector) return std_logic_vector;
+	function ShiftRight(a, qt : std_logic_vector) return std_logic_vector;
+	function Transfer(a, valor : std_logic_vector) return std_logic_vector;
+end;
+
+package body ArithmeticUnit is
+
+	function Sum(a, b : std_logic_vector) return std_logic_vector is
+	
+	end function;
+	
+	function Sub(a, b : std_logic_vector) return std_logic_vector is
+	
+	end function;
+	
+	
+	function Mul(a, b : std_logic_vector) return std_logic_vector is
+	
+	end function;
+	
+	
+	function ShiftLeft(a, qt : std_logic_vector) return std_logic_vector is
+	
+	end function;
+	
+	
+	function ShiftRight(a, qt : std_logic_vector) return std_logic_vector is
+	
+	end function;
+	
+	
+	function Transfer(a, valor : std_logic_vector) return std_logic_vector is
+	
+	end function;
+	
+end package body;

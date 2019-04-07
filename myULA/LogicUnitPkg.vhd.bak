@@ -1,0 +1,48 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+package LogicUnitPkg is			
+	function ShiftLeft(a : std_logic_vector) return std_logic_vector;
+	function ShiftRight(a : std_logic_vector) return std_logic_vector;	
+	function OpOR (x, y : std_logic_vector) return std_logic_vector;
+end;
+
+package body LogicUnitPkg is
+
+	function ShiftLeft(a : std_logic_vector)
+		return std_logic_vector is
+		variable z: std_logic_vector (15 downto 0)
+			begin
+			
+			return z;
+	end function;
+	
+	--function ShiftRight(a, qt : std_logic_vector) return std_logic_vector is
+--	end function;
+	
+
+	function OpOR (x : std_logic_vector (7 downto 0);
+						 y : std_logic_vector (7 downto 0))
+		return std_logic_vector is	
+		variable z: std_logic_vector (15 downto 0);
+		begin
+			z := X"00" & (x or y);
+			return z;
+		
+	end function;
+		
+	
+	--function Sub(a, b : std_logic_vector) return std_logic_vector is	
+	--end function;
+	
+	
+	--function Equal(a, valor : std_logic_vector) return std_logic_vector is	
+--	end function;
+
+	--function Less(a, valor : std_logic_vector) return std_logic_vector is	
+--	end function;
+
+	--function Greater(a, valor : std_logic_vector) return std_logic_vector is	
+--	end function;
+end package body;

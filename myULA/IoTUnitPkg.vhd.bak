@@ -1,0 +1,23 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+--use IEEE.std_logic_signed.all;
+use ieee.numeric_std.all;
+
+package IoTUnitPkg is
+		function SendRFID(rfid : std_logic_vector) return std_logic_vector;
+	--	function ValidateRFID(a, b : std_logic_vector) return std_logic_vector;
+end;
+
+package body IoTUnitPkg is
+
+	function ReadRFID(rfid : std_logic_vector (7 downto 0))
+		return std_logic_vector is
+		variable z: std_logic_vector (15 downto 0);
+		begin
+			if rfid != null
+				z :=  rfid or "0000000000000000";
+			return z;			
+	end function;
+
+end package body;

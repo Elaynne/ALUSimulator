@@ -1,0 +1,46 @@
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+entity teste is port
+(
+	A, B : in std_logic_vector(7 downto 0);
+	O : out std_logic_vector(15 downto 0);
+	Selector : in std_logic_vector(4 downto 0)
+);
+end teste;
+
+architecture hardware of teste is
+begin
+process(A, B, Selector)
+begin
+	case Selector is
+	
+	when "00000" => O <= (A + B) AND "0000000000000000";
+	when "00001" => O <= (A - B) AND "0000000000000000";
+	when "00010" => O <= (A AND B) AND "0000000000000000";
+	when "00011" => O <= (A OR B) AND "0000000000000000";
+	when "00100" => O <= (A XOR B) AND "0000000000000000";
+	when "00101" => O <= (A NAND B) AND "0000000000000000";
+	when "00110" => O <= (A NOR B) AND "0000000000000000";
+	when "00111" => O <= (A XNOR B) AND "0000000000000000";
+	when "01000" => O <= (NOT A) AND "0000000000000000";
+	when "01001" => O <= (NOT B) AND "0000000000000000";
+	when "01010" => O <= (NOT B) AND "0000000000000000";
+	when "01011" => O <= (NOT B) AND "0000000000000000";
+	when "01100" => O <= (NOT B) AND "0000000000000000";
+	when "01101" => O <= (NOT B) AND "0000000000000000";
+	when "01110" => O <= (NOT B) AND "0000000000000000";
+	when "01111" => O <= (NOT B) AND "0000000000000000";
+	when "10000" => O <= (NOT B) AND "0000000000000000";
+	when "10001" => O <= (NOT B) AND "0000000000000000";
+	when "10010" => O <= (NOT B) AND "0000000000000000";
+	when "10011" => O <= (NOT B) AND "0000000000000000";
+	when "10100" => O <= (NOT B) AND "0000000000000000";
+	when others => O <= "ZZZZZZZZZZZZZZZZ";
+	
+	end case;
+end process;
+
+end hardware;
