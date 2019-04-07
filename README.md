@@ -30,3 +30,8 @@ The architecture of the project was developed by creating the Control Unit calle
 For this work, no carry variable was implemented because the size of the 16-bit output already guarantees for the operations performed, that there will be no overflow and the use of the libraries allows to perform operations with the signals of the operands (sum, sub, mul) without having to do the Loop to iterate every bit. All arithmetic operations, **except multiplication**, perform logical OR operation with 16-bit vector with zeros to format its output to 16 bits as expected by the ALU controller.
 
 
+Shift operations used an unsigned helper variable to convert the input operand of type std_logic_vector. After the conversion, we performed the shift left and shift right operations with the logical operands "sll" and "srl" whose result was converted again to the expected output std_logic_vector. Finally, the result of the AND between the result of the shift with a binary vector of 16 zeros is returned to format the output expected by the ALU.
+
+The Equal, Less, and Greater operations return the binary vector "0000000000000000" if its sentence is false, and "0000000000000001" if the sentence is true. The other logical operations AND, OR, XOR, NAND, NOR, XNOR and NOT_A also go through the 16-bit size output conversion, and the NOT_A operation is unary by inverting the value of input A.
+
+
